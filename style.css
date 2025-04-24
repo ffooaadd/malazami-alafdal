@@ -1,0 +1,42 @@
+/* تنسيق القائمة الجانبية */
+.side-menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    width: 250px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+.side-menu.show {
+    transform: translateX(0);
+}
+
+#sideMenuContent {
+    margin-top: 20px;
+}
+
+#sideMenuContent ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#sideMenuContent ul li {
+    margin: 10px 0;
+}
+
+#sideMenuContent ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+}
+
+.hidden {
+    display: none;
+}
