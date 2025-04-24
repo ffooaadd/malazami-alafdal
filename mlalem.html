@@ -1,46 +1,18 @@
-<!DOCTYPE html>
-<html lang="ar">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ملازم دراسية - ملازمي الأفضل</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.2/dist/tailwind.min.css" rel="stylesheet">
-</head>
-<body class="bg-gradient-to-r from-green-600 via-green-500 to-green-400 text-white font-sans">
-
-    <!-- Header -->
-    <header class="p-6 text-center">
-        <h1 class="text-4xl font-bold mb-2">ملازم دراسية</h1>
-        <p class="text-lg">اختر المرحلة الدراسية للحصول على الملازم</p>
-    </header>
-
-    <!-- Content -->
-    <div class="container mx-auto my-10">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="bg-white p-6 rounded-xl shadow-xl hover:shadow-2xl transition duration-300 ease-in-out transform hover:scale-105">
-                <h3 class="text-xl font-semibold mb-4 text-green-500">المرحلة الابتدائية</h3>
-                <button onclick="showMlalemItems('المرحلة الابتدائية')" class="bg-green-500 text-white py-2 px-4 rounded-full hover:bg-green-700">عرض الملازم</button>
-            </div>
-            <div class="bg-white p-6 rounded-xl shadow-xl hover:shadow-2xl transition duration-300 ease-in-out transform hover:scale-105">
-                <h3 class="text-xl font-semibold mb-4 text-green-500">المرحلة المتوسطة</h3>
-                <button onclick="showMlalemItems('المرحلة المتوسطة')" class="bg-green-500 text-white py-2 px-4 rounded-full hover:bg-green-700">عرض الملازم</button>
-            </div>
-            <div class="bg-white p-6 rounded-xl shadow-xl hover:shadow-2xl transition duration-300 ease-in-out transform hover:scale-105">
-                <h3 class="text-xl font-semibold mb-4 text-green-500">المرحلة الثانوية</h3>
-                <button onclick="showMlalemItems('المرحلة الثانوية')" class="bg-green-500 text-white py-2 px-4 rounded-full hover:bg-green-700">عرض الملازم</button>
-            </div>
-        </div>
-
-        <div id="mlalemItems" class="mt-8 hidden">
-            <!-- سيتم عرض الملازم هنا -->
-        </div>
+<!-- جزء من الكود داخل body -->
+<div class="container mx-auto my-10">
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="bg-white p-6 rounded-xl shadow-xl hover:shadow-2xl transition duration-300 ease-in-out transform hover:scale-105">
+      <h3 class="text-xl font-semibold mb-4 text-green-500">المرحلة الثانوية</h3>
+      <button onclick="showGrades('mlalem', 'المرحلة الثانوية')" class="bg-green-500 text-white py-2 px-4 rounded-full hover:bg-green-700">عرض الصفوف</button>
     </div>
+    <!-- أضف مراحل أخرى حسب الحاجة -->
+  </div>
 
-    <!-- Footer -->
-    <footer class="bg-green-800 text-center py-4 mt-10">
-        <p>© 2025 ملازمي الأفضل. جميع الحقوق محفوظة.</p>
-    </footer>
+  <div id="mlalemGrades" class="mt-8 hidden">
+    <!-- سيتم عرض الصفوف هنا -->
+  </div>
 
-    <script src="app.js"></script>
-</body>
-</html>
+  <div id="mlalemSubjects" class="mt-8 hidden">
+    <!-- سيتم عرض المواد هنا -->
+  </div>
+</div>
