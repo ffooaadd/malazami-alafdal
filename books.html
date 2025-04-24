@@ -1,46 +1,18 @@
-<!DOCTYPE html>
-<html lang="ar">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>كتب دراسية - ملازمي الأفضل</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.2/dist/tailwind.min.css" rel="stylesheet">
-</head>
-<body class="bg-gradient-to-r from-blue-600 via-blue-500 to-indigo-500 text-white font-sans">
-
-    <!-- Header -->
-    <header class="p-6 text-center">
-        <h1 class="text-4xl font-bold mb-2">كتب دراسية</h1>
-        <p class="text-lg">اختر الصف للحصول على المواد الدراسية</p>
-    </header>
-
-    <!-- Content -->
-    <div class="container mx-auto my-10">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="bg-white p-6 rounded-xl shadow-xl hover:shadow-2xl transition duration-300 ease-in-out transform hover:scale-105">
-                <h3 class="text-xl font-semibold mb-4 text-blue-500">الصف الأول</h3>
-                <button onclick="showSubjects('الصف الأول')" class="bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-700">عرض المواد</button>
-            </div>
-            <div class="bg-white p-6 rounded-xl shadow-xl hover:shadow-2xl transition duration-300 ease-in-out transform hover:scale-105">
-                <h3 class="text-xl font-semibold mb-4 text-blue-500">الصف الثاني</h3>
-                <button onclick="showSubjects('الصف الثاني')" class="bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-700">عرض المواد</button>
-            </div>
-            <div class="bg-white p-6 rounded-xl shadow-xl hover:shadow-2xl transition duration-300 ease-in-out transform hover:scale-105">
-                <h3 class="text-xl font-semibold mb-4 text-blue-500">الصف الثالث</h3>
-                <button onclick="showSubjects('الصف الثالث')" class="bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-700">عرض المواد</button>
-            </div>
-        </div>
-
-        <div id="subjects" class="mt-8 hidden">
-            <!-- سيتم عرض المواد هنا -->
-        </div>
+<!-- جزء من الكود داخل body -->
+<div class="container mx-auto my-10">
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="bg-white p-6 rounded-xl shadow-xl hover:shadow-2xl transition duration-300 ease-in-out transform hover:scale-105">
+      <h3 class="text-xl font-semibold mb-4 text-blue-500">المرحلة المتوسطة</h3>
+      <button onclick="showGrades('books', 'المرحلة المتوسطة')" class="bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-700">عرض الصفوف</button>
     </div>
+    <!-- أضف مراحل أخرى حسب الحاجة -->
+  </div>
 
-    <!-- Footer -->
-    <footer class="bg-blue-800 text-center py-4 mt-10">
-        <p>© 2025 ملازمي الأفضل. جميع الحقوق محفوظة.</p>
-    </footer>
+  <div id="booksGrades" class="mt-8 hidden">
+    <!-- سيتم عرض الصفوف هنا -->
+  </div>
 
-    <script src="app.js"></script>
-</body>
-</html>
+  <div id="booksSubjects" class="mt-8 hidden">
+    <!-- سيتم عرض المواد هنا -->
+  </div>
+</div>
