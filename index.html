@@ -1,41 +1,40 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ملازمي الأفضل</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <script src="app.js" defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.2/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body class="bg-gray-100 text-right font-sans">
-    <!-- القائمة الجانبية -->
-    <div class="fixed top-0 right-0 p-4 z-50">
-        <button onclick="toggleMenu()" class="text-3xl text-blue-600">&#9776;</button>
-    </div>
-    <div id="sideMenu" class="fixed top-0 right-0 bg-white w-64 h-full shadow-lg transform translate-x-full transition-transform duration-300 z-50">
-        <div class="p-4">
-            <h2 class="text-xl font-bold mb-4">القائمة</h2>
-            <ul>
-                <li><a href="index.html" class="block py-2 text-blue-700 hover:text-blue-900">الصفحة الرئيسية</a></li>
-                <li class="mb-2">
-                    <button onclick="toggleSubmenu()" class="w-full text-right py-2 text-blue-700 hover:text-blue-900">ملازم الثانوية</button>
-                    <ul id="submenu" class="hidden ml-4 mt-2">
-                        <li><button onclick="showMaterials('أول متوسط')" class="text-sm py-1 text-green-600 hover:text-green-800">أول متوسط</button></li>
-                        <li><button onclick="showMaterials('ثاني متوسط')" class="text-sm py-1 text-green-600 hover:text-green-800">ثاني متوسط</button></li>
-                        <li><button onclick="showMaterials('ثالث متوسط')" class="text-sm py-1 text-green-600 hover:text-green-800">ثالث متوسط</button></li>
-                    </ul>
-                </li>
-                <li><a href="support.html" class="block py-2 text-blue-700 hover:text-blue-900">الدعم الفني</a></li>
-                <li><a href="https://t.me/FPFPPF" target="_blank" class="block py-2 text-blue-700 hover:text-blue-900">مالك الموقع</a></li>
-            </ul>
+<body class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white font-sans">
+
+    <!-- Header -->
+    <header class="p-6 text-center">
+        <h1 class="text-4xl font-bold mb-2">ملازمي الأفضل</h1>
+        <p class="text-lg">أفضل مكان للملازم والكتب الدراسية</p>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container mx-auto my-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Books Section -->
+        <div class="bg-white p-6 rounded-xl shadow-xl hover:shadow-2xl transition duration-300 ease-in-out transform hover:scale-105">
+            <h2 class="text-2xl font-semibold mb-4 text-blue-600">كتب دراسية</h2>
+            <p class="mb-4">اختر الصف الدراسي للاطلاع على الكتب الدراسية.</p>
+            <a href="books.html" class="bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-700 transition duration-300">عرض الكتب</a>
+        </div>
+
+        <!-- Mlalem Section -->
+        <div class="bg-white p-6 rounded-xl shadow-xl hover:shadow-2xl transition duration-300 ease-in-out transform hover:scale-105">
+            <h2 class="text-2xl font-semibold mb-4 text-green-600">ملازم دراسية</h2>
+            <p class="mb-4">اختر المرحلة الدراسية للاطلاع على الملازم.</p>
+            <a href="mlalem.html" class="bg-green-500 text-white py-2 px-4 rounded-full hover:bg-green-700 transition duration-300">عرض الملازم</a>
         </div>
     </div>
 
-    <!-- الصفحة الرئيسية -->
-    <div class="container mx-auto mt-16 p-4">
-        <h1 class="text-3xl font-bold text-blue-800 mb-6">مرحبًا بك في ملازمي الأفضل</h1>
-        <p class="text-lg">اختر من القائمة الجانبية للوصول إلى الكتب أو الملازم.</p>
-        <div id="materialsList" class="mt-6"></div>
-    </div>
+    <!-- Footer -->
+    <footer class="bg-blue-800 text-center py-4 mt-10">
+        <p>© 2025 ملازمي الأفضل. جميع الحقوق محفوظة.</p>
+    </footer>
+
 </body>
 </html>
