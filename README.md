@@ -1,1 +1,0 @@
-# malazami-alafdal
