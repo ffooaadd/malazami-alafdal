@@ -1,101 +1,51 @@
-// دالة لعرض المواد الدراسية بناءً على الصف المختار
-function showSubjects(grade) {
-    const subjects = {
-        'الصف الأول': ['رياضيات', 'لغة عربية', 'علوم'],
-        'الصف الثاني': ['رياضيات', 'لغة إنجليزية', 'علوم'],
-        'الصف الثالث': ['رياضيات', 'لغة عربية', 'جغرافيا']
-    };
+const data = {
+  'المرحلة الابتدائية': {
+    'الصف الأول': ['رياضيات', 'لغة عربية', 'علوم'],
+    'الصف الثاني': ['رياضيات', 'لغة إنجليزية', 'علوم'],
+    // أضف الصفوف والمواد الأخرى حسب الحاجة
+  },
+  'المرحلة المتوسطة': {
+    'الأول متوسط': ['الفيزياء', 'الكيمياء', 'الأحياء', 'الاجتماعيات', 'الإنكليزي', 'الإسلامية', 'العربي'],
+    'الثاني متوسط': ['الفيزياء', 'الكيمياء', 'الأحياء', 'الاجتماعيات', 'الإنكليزي', 'الإسلامية', 'العربي'],
+    'الثالث متوسط': ['الفيزياء', 'الكيمياء', 'الأحياء', 'الاجتماعيات', 'الإنكليزي', 'الإسلامية', 'العربي'],
+  },
+  'المرحلة الثانوية': {
+    'الثالث ثانوي': ['الفيزياء', 'الكيمياء', 'الأحياء', 'الاجتماعيات', 'الإنكليزي', 'الإسلامية', 'العربي']
+  }
+};
 
-    const subjectContainer = document.getElementById('subjects');
-    subjectContainer.innerHTML = ''; // مسح المحتوى القديم
+function showGrades(type, stage) {
+  const gradesContainer = document.getElementById(`${type}Grades`);
+  const subjectsContainer = document.getElementById(`${type}Subjects`);
+  gradesContainer.innerHTML = '';
+  subjectsContainer.innerHTML = '';
+  gradesContainer.classList.remove('hidden');
+  subjectsContainer.classList.add('hidden');
 
-    if (subjects[grade]) {
-        const ul = document.createElement('ul');
-        subjects[grade].forEach(subject => {
-            const li = document.createElement('li');
-            li.classList.add('text-lg', 'mb-2', 'text-blue-600');
-            li.innerText = subject;
-            ul.appendChild(li);
-        });
-        subjectContainer.appendChild(ul);
-        subjectContainer.classList.remove('hidden'); // إظهار المحتوى
-    }
+  const grades = Object.keys(data[stage]);
+
+  grades.forEach(grade => {
+    const button = document.createElement('button');
+    button.className = 'bg-yellow-400 text-white py-2 px-4 m-2 rounded hover:bg-yellow-600';
+    button.innerText = grade;
+    button.onclick = () => showSubjects(type, stage, grade);
+    gradesContainer.appendChild(button);
+  });
 }
 
-// دالة لعرض الملازم الدراسية بناءً على المرحلة المختارة
-function showMlalemItems(level) {
-    const mlalem = {
-        'المرحلة الابتدائية': ['ملازم فيزياء', 'ملازم رياضيات'],
-        'المرحلة المتوسطة': ['ملازم كيمياء', 'ملازم علوم'],
-        'المرحلة الثانوية': ['ملازم فيزياء', 'ملازم كيمياء', 'ملازم رياضيات']
-    };
+function showSubjects(type, stage, grade) {
+  const subjectsContainer = document.getElementById(`${type}Subjects`);
+  subjectsContainer.innerHTML = '';
+  subjectsContainer.classList.remove('hidden');
 
-    const mlalemContainer = document.getElementById('mlalemItems');
-    mlalemContainer.innerHTML = ''; // مسح المحتوى القديم
+  const subjects = data[stage][grade];
 
-    if (mlalem[level]) {
-        const ul = document.createElement('ul');
-        mlalem[level].forEach(item => {
-            const li = document.createElement('li');
-            li.classList.add('text-lg', 'mb-2', 'text-green-600');
-            li.innerText = item;
-            ul.appendChild(li);
-        });
-        mlalemContainer.appendChild(ul);
-        mlalemContainer.classList.remove('hidden'); // إظهار المحتوى
-    }
-}
-// دالة لتبديل القوائم الجانبية
-function toggleMenu() {
-    const menu = document.getElementById('sideMenu');
-    const content = document.getElementById('sideMenuContent');
-    content.classList.toggle('hidden');
-}
-
-// دالة لعرض المواد الدراسية بناءً على الصف المختار
-function showSubjects(grade) {
-    const subjects = {
-        'الصف الأول': ['رياضيات', 'لغة عربية', 'علوم'],
-        'الصف الثاني': ['رياضيات', 'لغة إنجليزية', 'علوم'],
-        'الصف الثالث': ['رياضيات', 'لغة عربية', 'جغرافيا']
-    };
-
-    const subjectContainer = document.getElementById('subjects');
-    subjectContainer.innerHTML = ''; // مسح المحتوى القديم
-
-    if (subjects[grade]) {
-        const ul = document.createElement('ul');
-        subjects[grade].forEach(subject => {
-            const li = document.createElement('li');
-            li.classList.add('text-lg', 'mb-2', 'text-blue-600');
-            li.innerText = subject;
-            ul.appendChild(li);
-        });
-        subjectContainer.appendChild(ul);
-        subjectContainer.classList.remove('hidden'); // إظهار المحتوى
-    }
-}
-
-// دالة لعرض الملازم الدراسية بناءً على المرحلة المختارة
-function showMlalemItems(level) {
-    const mlalem = {
-        'المرحلة الابتدائية': ['ملازم فيزياء', 'ملازم رياضيات'],
-        'المرحلة المتوسطة': ['ملازم كيمياء', 'ملازم علوم'],
-        'المرحلة الثانوية': ['ملازم فيزياء', 'ملازم كيمياء', 'ملازم رياضيات']
-    };
-
-    const mlalemContainer = document.getElementById('mlalemItems');
-    mlalemContainer.innerHTML = ''; // مسح المحتوى القديم
-
-    if (mlalem[level]) {
-        const ul = document.createElement('ul');
-        mlalem[level].forEach(item => {
-            const li = document.createElement('li');
-            li.classList.add('text-lg', 'mb-2', 'text-green-600');
-            li.innerText = item;
-            ul.appendChild(li);
-        });
-        mlalemContainer.appendChild(ul);
-        mlalemContainer.classList.remove('hidden'); // إظهار المحتوى
-    }
+  subjects.forEach(subject => {
+    const link = document.createElement('a');
+    link.href = `https://t.me/XD6_bot`; // رابط البوت الذي يستلم المواد
+    link.target = '_blank';
+    link.className = 'block bg-purple-500 text-white py-2 px-4 m-2 rounded hover:bg-purple-700';
+    link.innerText = subject;
+    subjectsContainer.appendChild(link);
+  });
 }
